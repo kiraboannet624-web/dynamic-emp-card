@@ -24,14 +24,18 @@ const [searchTerm, setSearchTerm] = useState("");
 
   if (loading) return <p>Loading employees...</p>;
   if (error) return <p>{error}</p>;
-
+const filteredEmployees = employees.filter((employee) =>
+  employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  employee.email.toLowerCase().includes(searchTerm.toLowerCase())
+);
   
 
   return (
     <div>
       <h1>Employee Directory</h1>
 
-      {employees.map((employee) => (
+      {
+      filteredEmployees.map((employee) => (
         <EmployeeCard key={employee.id} employee={employee} />
       ))}
       <input
