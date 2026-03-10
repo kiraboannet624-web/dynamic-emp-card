@@ -5,7 +5,7 @@ import { fetchEmployees } from "./components/api"
 
 
 function App() {
-  const [employees, setEmployees] = useState([]);
+  const [employees, g setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
