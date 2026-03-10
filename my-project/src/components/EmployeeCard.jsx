@@ -1,14 +1,14 @@
 function EmployeeCard({ employee }) {
-  const { id, name, email, phone, website, company } = employee;
+  const { name, email, phone, website, company, id } = employee;
 
   return (
-    <div>
-      <h3>{name}</h3>
-      <p>ID: {id}</p>
-      <p>Email: {email}</p>
-      <p>Phone: {phone}</p>
-      <p>Website: {website}</p>
-      <p>Company: {company?.name}</p>
+    <div className="card">
+      <h2>{name}</h2>
+      <p><strong>ID:</strong> {id}</p>
+      <p><strong>Email:</strong> {email}</p>
+      <p><strong>Phone:</strong> {phone}</p>
+      <p><strong>Website:</strong> {website}</p>
+      <p><strong>Company:</strong> {company.name}</p>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import EmployeeCard from "./components/EmployeeCard";
 import { fetchEmployees } from "./components/api";
+import "./styles.css";
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -30,23 +31,17 @@ const filteredEmployees = employees.filter((employee) =>
 );
   
 
-  return (
-    <div>
-      <h1>Employee Directory</h1>
+    return (
+  <div>
+    <h1>Employee Card Generator</h1>
 
-      {
-      filteredEmployees.map((employee) => (
+    <div className="container">
+      {employees.map((employee) => (
         <EmployeeCard key={employee.id} employee={employee} />
       ))}
-      <input
-  type="text"
-  placeholder="Search by name or email..."
-  value={searchTerm}
-  onChange={(e) => setSearchTerm(e.target.value)}
-/>
     </div>
-    
-  );
+  </div>
+);
 }
 
 export default App;
