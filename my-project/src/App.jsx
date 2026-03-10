@@ -1,7 +1,8 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import EmployeeCard from "./components/EmployeeCard";
-import { fetchEmployees } from "./components/api";
-import "./styles.css";
+import { fetchEmployees } from "./components/api"
+
 
 function App() {
   const [employees, setEmployees] = useState([]);
